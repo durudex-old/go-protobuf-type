@@ -15,6 +15,14 @@
 
 <h1 align="center">Go Protobuf Helper</h1>
 
+# Setup
+
+To use our protoc files, you will need to add them locally:
+
+```sh
+cp -R assets protoc-path/include
+```
+
 ## ⚠️ License
 Copyright © 2022 [Durudex](https://github.com/durudex). Released under the MIT license.
 
