@@ -20,11 +20,15 @@
 To use our protoc files, you will need to add them locally:
 
 ```sh
-cp -R assets protoc-path/include
+# Set path to you protoc compiler.
+PROTOC_PATH=path
+
+# Make directory for proto files.
+mkdir -p $PROTOC_PATH/durudex
+
+# Copy files to directory.
+cp -R proto/src/durudex/type $PROTOC_PATH/durudex
 ```
 
 ## ⚠️ License
 Copyright © 2022 [Durudex](https://github.com/durudex). Released under the MIT license.
-
-#### Third-party library licenses
-+ [protobuf-go](https://github.com/protocolbuffers/protobuf-go/blob/master/LICENSE)
