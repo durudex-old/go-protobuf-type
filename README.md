@@ -17,7 +17,14 @@
 
 # Setup
 
-To use our protoc files, you will need to add them locally:
+If you use [buf.build](https://docs.buf.build/introduction) then you can add our proto files as follows:
+
+```yml
+deps:
+  - buf.build/durudex/type
+```
+
+Or you can add our proto files locally:
 
 ```sh
 # Set path to you protoc compiler.
@@ -27,7 +34,7 @@ PROTOC_PATH=path
 mkdir -p $PROTOC_PATH/durudex
 
 # Copy files to directory.
-cp -R proto/src/durudex/type $PROTOC_PATH/durudex
+cp -R proto/src/type/durudex/type $PROTOC_PATH/durudex
 ```
 
 ## ⚠️ License
