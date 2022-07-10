@@ -13,11 +13,9 @@
     </a>
 </div>
 
-<h1 align="center">Go Protobuf Helper</h1>
+<h1 align="center">Go Protobuf Types</h1>
 
 # Setup
-
-
 
 ```
 go get github.com/durudex/dugopb
@@ -50,10 +48,10 @@ import (
 
 func main() {
     // Creating a generated protobuf Test message structure.
-	test := Test{Timestamp: timestamp.Now()}
+    test := Test{Timestamp: timestamp.Now()}
 
     // Getting time.Time type.
-	fmt.Println(test.Timestamp.AsTime()) // 2022-07-10 16:07:08.243878 +0000 UTC
+    fmt.Println(test.Timestamp.AsTime()) // 2022-07-10 16:07:08.243878 +0000 UTC
 }
 ```
 
