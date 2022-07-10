@@ -17,6 +17,12 @@
 
 # Setup
 
+
+
+```
+go get github.com/durudex/dugopb
+```
+
 If you use [buf.build](https://docs.buf.build/introduction) then you can add our proto files as follows:
 
 ```yml
@@ -24,17 +30,31 @@ deps:
   - buf.build/durudex/type
 ```
 
-Or you can add our proto files locally:
+# Usage
 
-```sh
-# Set path to you protoc compiler.
-PROTOC_PATH=path
+```proto
+import "durudex/type/timestamp.proto";
 
-# Make directory for proto files.
-mkdir -p $PROTOC_PATH/durudex
+message Test {
+    // Used custom timestamp type.
+    durudex.type.Timestamp timestamp = 1;
+}
+```
 
-# Copy files to directory.
-cp -R proto/src/type/durudex/type $PROTOC_PATH/durudex
+```go
+import (
+    "fmt"
+
+    "github.com/durudex/dugopb/type/timestamp"
+)
+
+func main() {
+    // Creating a generated protobuf Test message structure.
+	test := Test{Timestamp: timestamp.Now()}
+
+    // Getting time.Time type.
+	fmt.Println(test.Timestamp.AsTime()) // 2022-07-10 16:07:08.243878 +0000 UTC
+}
 ```
 
 ## ⚠️ License
