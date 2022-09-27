@@ -1,4 +1,4 @@
-module github.com/durudex/dugopb
+module github.com/durudex/go-protobuf-type
 
 go 1.18
 

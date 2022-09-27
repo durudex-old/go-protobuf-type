@@ -8,9 +8,9 @@
 // versions:
 // 	protoc-gen-go v1.26.0
 // 	protoc        v3.19.4
-// source: assets/durudex/types/timestamp.proto
+// source: proto/src/type/durudex/type/timestamp.proto
 
-package timestamp
+package pbtype
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -27,12 +27,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Timestamp.
 type Timestamp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Seconds of UTC time since Unix epoch.
 	Seconds int64 `protobuf:"varint,1,opt,name=seconds,proto3" json:"seconds,omitempty"`
+	// A second at nanosecond resolution.
 	Nanos   int32 `protobuf:"varint,2,opt,name=nanos,proto3" json:"nanos,omitempty"`
 }
 
